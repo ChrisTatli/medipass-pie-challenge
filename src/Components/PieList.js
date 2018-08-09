@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import {client} from '../Client';
-import TextField from '@material-ui/core/TextField';
+import {client} from '../Services/Client';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Button from '@material-ui/core/Button';
+
 
 import Pie from "./Pie"
+import SearchBar from "./SearchBar"
+import Pager from "./Pager"
 
 class PieList extends Component{
 
@@ -17,6 +18,7 @@ class PieList extends Component{
     order: "asc",
     searchString: ""
   };
+
   constructor(){
     super();
     this.getPies(this.state.offset, this.state.order, this.state.searchString);
@@ -68,23 +70,23 @@ class PieList extends Component{
         })
       }
     
-    this.getPies(this.state.offset, this.state.order, this.state.searchString)
+    this.getPies(this.state.offset, this.state.order, e.target.value)
   }
 
 
   changeOrder = () => {
     if(this.state.order === "asc"){
-      let o = "desc";
+      let order = "desc";
       this.setState({
-        order: o,
+        order: order,
       })
-      this.getPies(this.state.offset, o, this.state.searchString)
+      this.getPies(this.state.offset, order, this.state.searchString)
     } else {
-      let o = "asc";
+      let order = "asc";
       this.setState({
-        order: o,
+        order: order,
       })
-      this.getPies(this.state.offset, o, this.state.searchString)
+      this.getPies(this.state.offset, order, this.state.searchString)
     }
   }
 
@@ -96,62 +98,32 @@ class PieList extends Component{
           <Grid container spacing={24} style={{padding:24}}>
             {this.state.pies ? (
                 <div>
-                  
-                    <TextField style={{padding: 24}}
-                        id="searchInput"
-                        placeholder="Search for Pies"
-                        margin="normal"
-                        onChange={this.onSearchChange}
-                    />
-                    {this.state.order === "desc" ? (
-                      <Button 
-                      size="small" 
-                      onClick ={this.changeOrder}
-                      color = "primary"
-                    >
-                      Ascending Price
-                    </Button>
-                    ) : (
-                      <Button 
-                      size="small" 
-                      onClick ={this.changeOrder}
-                      color = "primary"
-                    >
-                      Descending Price
-                    </Button>
-                    )}
-                    
+                    <SearchBar
+                      onSearchChange={this.onSearchChange}
+                      changeOrder={this.changeOrder}
+                      order={this.state.order}
+                    />            
                     <Grid container spacing={24} style={{padding: 24}}>
                         <List>
-                            {this.state.pies.map(currentPie => {  
-                                let store = this.state.stores.find(p => p.id === currentPie.storeId);                      
+                            {this.state.pies.map((currentPie,index) => {  
+                                let store = this.state.stores.find(pie => pie.id === currentPie.storeId);                      
                                 return(
-                                <ListItem>
+                                <ListItem key={index}>                                 
                                     <Pie pie = {currentPie} 
-                                         store = {store}/>
+                                         store = {store}
+                                    />
                                 </ListItem>
                                 );
                             })}
                         </List>
                     </Grid>
-                    {this.state.offset === 1 ? null : (
-                      <Button 
-                        size="medium" 
-                        onClick ={this.prevPage}
-                        color = "primary"
-                      >
-                        Previous
-                      </Button>
-                    )}
-                    {this.state.pies.length < 5 ? null : (
-                    <Button 
-                      size="medium" 
-                      onClick ={this.nextPage}
-                      color = "primary"
-                    >
-                      Next
-                    </Button>
-                    )}
+                    <Pager
+                      nextPage={this.nextPage}
+                      prevPage={this.prevPage}
+                      pageOffset={this.state.offset}
+                      currentPageLength={this.state.pies.length}
+                    />
+                    
                 </div>
             ) : "No pies Found"}
             </Grid>
