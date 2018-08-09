@@ -8,7 +8,7 @@ const Pie = (props) => {
 
     return(
         <div>  
-            {props.pie ? (
+            {props.store && props.pie ? (
                 <Card style={{minWidth: 400}}>
                     <CardHeader
                         title = {props.store.displayName}

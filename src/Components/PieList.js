@@ -22,6 +22,7 @@ class PieList extends Component{
     this.getPies(this.state.offset, this.state.order, this.state.searchString);
     this.getStores();
   }
+ 
 
 
   getPies = (pageOffset, order, searchString) => {
