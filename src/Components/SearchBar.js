@@ -10,24 +10,24 @@ const SearchBar = (props)=>{
                         placeholder="Search for Pies"
                         margin="normal"
                         onChange={props.onSearchChange}
-                    />
-                    {props.order === "desc" ? (
-                      <Button 
-                      size="small" 
-                      onClick ={props.changeOrder}
-                      color = "primary"
-                    >
-                      Ascending Price
-                    </Button>
-                    ) : (
-                      <Button 
-                      size="small" 
-                      onClick ={props.changeOrder}
-                      color = "primary"
-                    >
-                      Descending Price
-                    </Button>
-                    )}
+            />
+            {props.order === "desc" ? (
+            <Button 
+              size="small" 
+              onClick ={props.changeOrder}
+              color = "primary"
+            >
+              Ascending Price
+            </Button>
+            ):(
+            <Button 
+              size="small" 
+              onClick ={props.changeOrder}
+              color = "primary"
+            >
+              Descending Price
+            </Button>
+            )}
         </div>
     )
 }
