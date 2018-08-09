@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar component renders a snapshot 1`] = `
+<div>
+  <div
+    aria-describedby={undefined}
+    className="MuiFormControl-root-1 MuiFormControl-marginNormal-2"
+    style={
+      Object {
+        "padding": 24,
+      }
+    }
+  >
+    <div
+      className="MuiInput-root-5 MuiInput-formControl-6 MuiInput-underline-9"
+    >
+      <input
+        aria-invalid={false}
+        autoComplete={undefined}
+        autoFocus={undefined}
+        className="MuiInput-input-13"
+        defaultValue={undefined}
+        disabled={false}
+        id="searchInput"
+        name={undefined}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={undefined}
+        onKeyUp={undefined}
+        placeholder="Search for Pies"
+        readOnly={undefined}
+        required={false}
+        rows={undefined}
+        type="text"
+        value={undefined}
+      />
+    </div>
+  </div>
+  <button
+    className="MuiButtonBase-root-42 MuiButton-root-18 MuiButton-text-20 MuiButton-textPrimary-21 MuiButton-flat-23 MuiButton-flatPrimary-24 MuiButton-sizeSmall-39"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-19"
+    >
+      Descending Price
+    </span>
+    <span
+      className="MuiTouchRipple-root-45"
+    />
+  </button>
+</div>
+`;

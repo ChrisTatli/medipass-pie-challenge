@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pie component renders a snapshot 1`] = `
+<div>
+  <div
+    className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
+    style={
+      Object {
+        "minWidth": 400,
+      }
+    }
+  >
+    <div
+      className="MuiCardHeader-root-29"
+    >
+      <div
+        className="MuiCardHeader-content-32"
+      >
+        <span
+          className="MuiTypography-root-35 MuiTypography-headline-40 MuiCardHeader-title-33"
+        >
+          Hungry Jake's
+        </span>
+        <span
+          className="MuiTypography-root-35 MuiTypography-body1-44 MuiTypography-colorTextSecondary-58 MuiCardHeader-subheader-34"
+        >
+          345 Bourke Street - 0412512333
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-60"
+    >
+      <p
+        className="MuiTypography-root-35 MuiTypography-body1-44"
+      >
+        Beef and curry
+         - 
+        $2.00
+      </p>
+      <p
+        className="MuiTypography-root-35 MuiTypography-body1-44"
+      >
+        Quantity - 
+        1
+      </p>
+      <p
+        className="MuiTypography-root-35 MuiTypography-body1-44"
+      >
+        Store Rating - 
+        9
+        /10
+      </p>
+    </div>
+  </div>
+</div>
+`;
